@@ -7,6 +7,7 @@ using UniRx;
 
 public class LaunchSceneController : IInitializable
 {
+    [Inject]private FadeOverlay _fadeOverlay;
     const string BOOT_SCENE = "BootScene";
     const string MAIN_SCENE = "MainScene";
     const string Over_World_Scene = "OverWorldScene";
@@ -26,7 +27,6 @@ public class LaunchSceneController : IInitializable
             yield return null;
         }
         LoadScene();
-        // Tambah FadeOverlay
     }
     public void LoadScene()
     {
@@ -38,7 +38,7 @@ public class LaunchSceneController : IInitializable
         {
             SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName(Over_World_Scene));
         }
-        // Tambah FadeOverlay
+        _fadeOverlay.FadeInOverlay();
         if (!SceneManager.GetSceneByName(Over_World_Scene).isLoaded)
         {
             AsyncOperation SceneLoadOperation = SceneManager.LoadSceneAsync(Over_World_Scene, LoadSceneMode.Additive);
@@ -47,7 +47,7 @@ public class LaunchSceneController : IInitializable
                 yield return null;
             }
             SceneManager.SetActiveScene(SceneManager.GetSceneByName(Over_World_Scene));
-        // Tambah FadeOverlay
+            _fadeOverlay.FadeOutOverlay();
         }
     }
 }
