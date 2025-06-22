@@ -20,7 +20,7 @@ public class FadeOverlay : MonoBehaviour
         {
             yield return null;
         }
-        StartCoroutine(Fade(1, 0, time));
+        StartCoroutine(Fade(0, 1, time));
     }
     public IEnumerator FadeOut(float time)
     {
@@ -28,7 +28,7 @@ public class FadeOverlay : MonoBehaviour
         {
             yield return null;
         }
-        StartCoroutine(Fade(0, 1, time));
+        StartCoroutine(Fade(1, 0, time));
     }
     private IEnumerator Fade(float from, float to, float time)
     {

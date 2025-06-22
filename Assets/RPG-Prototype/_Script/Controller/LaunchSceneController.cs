@@ -38,7 +38,12 @@ public class LaunchSceneController : IInitializable
         {
             SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName(Over_World_Scene));
         }
+
         _fadeOverlay.FadeInOverlay();
+        while (!_fadeOverlay.IsDone)
+        {
+            yield return null;
+        }
         if (!SceneManager.GetSceneByName(Over_World_Scene).isLoaded)
         {
             AsyncOperation SceneLoadOperation = SceneManager.LoadSceneAsync(Over_World_Scene, LoadSceneMode.Additive);
@@ -47,7 +52,7 @@ public class LaunchSceneController : IInitializable
                 yield return null;
             }
             SceneManager.SetActiveScene(SceneManager.GetSceneByName(Over_World_Scene));
-            _fadeOverlay.FadeOutOverlay();
         }
+        _fadeOverlay.FadeOutOverlay();
     }
 }
