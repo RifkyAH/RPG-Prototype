@@ -6,7 +6,7 @@ public class PlayerIdleState : PlayerBaseState
 {
     public override void EnterState(PlayerStateController player)
     {
-
+        
     }
     public override void FixedUpdateState(PlayerStateController player)
     {

@@ -22,6 +22,7 @@ public class PlayerStateController : IInitializable, IDisposable
     }
     public void Initialize()
     {
+        _disposables = new CompositeDisposable();
         _input.OnHorizontalMovementAsObservable().Subscribe(_ => HorizontalMovement(_)).AddTo(_disposables);
         SwitchState(IdleState);
         CurrentState = IdleState;
@@ -29,6 +30,7 @@ public class PlayerStateController : IInitializable, IDisposable
     private void HorizontalMovement(float _)
     {
         _model.Horizontal = _;
+        Debug.Log(_);
     }
     public void SwitchState(PlayerBaseState state)
     {
@@ -40,5 +42,6 @@ public class PlayerStateController : IInitializable, IDisposable
             state.EnterState(this);
         }
     }
-    public PlayerStateModel GetModel{ get => _model; }
+    public PlayerStateManager GetPlayer { get => _player; }
+    public PlayerStateModel GetModel { get => _model; }
 }
