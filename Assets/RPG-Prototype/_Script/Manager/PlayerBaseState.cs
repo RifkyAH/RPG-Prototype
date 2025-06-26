@@ -7,5 +7,5 @@ public abstract class PlayerBaseState
     public abstract void EnterState(PlayerStateController player);
     public abstract void UpdateState(PlayerStateController player);
     public abstract void FixedUpdateState(PlayerStateController player);
-    public abstract void OnCollisionEnter(PlayerStateController player, Collision collision);
+    public abstract void OnCollisionEnter2D(PlayerStateController player, Collision2D collision);
 }

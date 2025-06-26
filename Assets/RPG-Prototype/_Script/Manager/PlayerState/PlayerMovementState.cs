@@ -11,10 +11,11 @@ public class PlayerMovementState : PlayerBaseState
     public override void FixedUpdateState(PlayerStateController player)
     {
         float Horizontal = player.GetModel.Horizontal;
-        Vector2 Movement = new Vector2(Horizontal, 0) * player.GetModel.MovementSpeed;
-        player.GetPlayer.rb.MovePosition(player.GetPlayer.rb.position+Movement*Time.fixedDeltaTime);
+        Vector2 velocity = player.GetPlayer.rb.velocity;
+        velocity.x = Horizontal * player.GetModel.MovementSpeed;
+        player.GetPlayer.rb.velocity = velocity;
     }
-    public override void OnCollisionEnter(PlayerStateController player, Collision collision)
+    public override void OnCollisionEnter2D(PlayerStateController player, Collision2D collision)
     {
         
     }
@@ -23,6 +24,10 @@ public class PlayerMovementState : PlayerBaseState
         if (player.GetModel.Horizontal == 0)
         {
             player.SwitchState(player.IdleState);
+        }
+        if (player.GetModel.OnGround && player.GetModel.JumpPressed)
+        {
+            player.SwitchState(player.JumpState);
         }
     }
 }

@@ -13,6 +13,7 @@ public class PlayerStateController : IInitializable, IDisposable
 
     public PlayerIdleState IdleState = new PlayerIdleState();
     public PlayerMovementState MovementState = new PlayerMovementState();
+    public PlayerJumpState JumpState = new PlayerJumpState();
     public PlayerBaseState CurrentState;
     public PlayerBaseState LastState;
     private CompositeDisposable _disposables;
@@ -24,13 +25,17 @@ public class PlayerStateController : IInitializable, IDisposable
     {
         _disposables = new CompositeDisposable();
         _input.OnHorizontalMovementAsObservable().Subscribe(_ => HorizontalMovement(_)).AddTo(_disposables);
+        _input.OnJumpAsObservable().Subscribe(_ => Jump()).AddTo(_disposables);
         SwitchState(IdleState);
         CurrentState = IdleState;
     }
     private void HorizontalMovement(float _)
     {
         _model.Horizontal = _;
-        Debug.Log(_);
+    }
+    private void Jump()
+    {
+        _model.JumpPressed = true;
     }
     public void SwitchState(PlayerBaseState state)
     {
