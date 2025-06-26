@@ -9,7 +9,7 @@ public class PlayerIdleState : PlayerBaseState
     }
     public override void FixedUpdateState(PlayerStateController player)
     {
-
+        player.GetPlayer.anim.SetFloat("isRun", Mathf.Abs(player.GetModel.Horizontal));
     }
     public override void OnCollisionEnter2D(PlayerStateController player, Collision2D collision)
     {

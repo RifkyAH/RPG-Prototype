@@ -7,6 +7,8 @@ public class PlayerStateManager : MonoBehaviour
 {
     [Inject] PlayerStateController _controller;
     [SerializeField] private Rigidbody2D _rb;
+    [SerializeField] private Animator _anim;
+    [SerializeField] private Transform _playerBody;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,5 +32,15 @@ public class PlayerStateManager : MonoBehaviour
             _controller.GetModel.OnGround = true;
         }
     }
-    public Rigidbody2D rb{ get => _rb; }
+    public void Flip()
+    {
+        _controller.GetModel.IsFacingRight = !_controller.GetModel.IsFacingRight;
+
+        Vector3 scale = _playerBody.localScale;
+        scale.x *= -1;
+        _playerBody.localScale = scale;
+    }
+    public Rigidbody2D rb { get => _rb; }
+    public Animator anim { get => _anim; }
+    public Transform playerBody { get => _playerBody;}
 }
