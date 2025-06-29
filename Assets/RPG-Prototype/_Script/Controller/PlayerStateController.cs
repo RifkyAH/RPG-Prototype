@@ -10,6 +10,8 @@ public class PlayerStateController : IInitializable, IDisposable
     [Inject] PlayerControlBinder _input;
     [Inject] PlayerStateManager _player;
     [Inject] PlayerStateModel _model;
+    [Inject] PlayerStatsModel _stats;
+    [Inject] PlayerView _view;
 
     public PlayerIdleState IdleState = new PlayerIdleState();
     public PlayerMovementState MovementState = new PlayerMovementState();
@@ -26,6 +28,8 @@ public class PlayerStateController : IInitializable, IDisposable
         _disposables = new CompositeDisposable();
         _input.OnHorizontalMovementAsObservable().Subscribe(_ => HorizontalMovement(_)).AddTo(_disposables);
         _input.OnJumpAsObservable().Subscribe(_ => Jump()).AddTo(_disposables);
+
+        _stats.OnHealtChangeAsObservable().Subscribe(_ => healthChange(_)).AddTo(_disposables);
         SwitchState(IdleState);
         CurrentState = IdleState;
     }
@@ -36,6 +40,10 @@ public class PlayerStateController : IInitializable, IDisposable
     private void Jump()
     {
         _model.JumpPressed = true;
+    }
+    private void healthChange(float HealthPoint)
+    {
+        _view.HealthUI.text = "Health : "+HealthPoint;
     }
     public void SwitchState(PlayerBaseState state)
     {
@@ -49,4 +57,5 @@ public class PlayerStateController : IInitializable, IDisposable
     }
     public PlayerStateManager GetPlayer { get => _player; }
     public PlayerStateModel GetModel { get => _model; }
+    public PlayerStatsModel GetStats { get => _stats; }
 }

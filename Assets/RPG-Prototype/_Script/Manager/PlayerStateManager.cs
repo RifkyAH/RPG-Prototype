@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-public class PlayerStateManager : MonoBehaviour
+public class PlayerStateManager : MonoBehaviour,IDamageable
 {
     [Inject] PlayerStateController _controller;
     [SerializeField] private Rigidbody2D _rb;
@@ -39,6 +39,11 @@ public class PlayerStateManager : MonoBehaviour
         Vector3 scale = _playerBody.localScale;
         scale.x *= -1;
         _playerBody.localScale = scale;
+    }
+    public void TakeDamage(float amount)
+    {
+        _controller.GetStats.HealthPoint -= amount;
+        _controller.GetStats._healthChange.OnNext(_controller.GetStats.HealthPoint);
     }
     public Rigidbody2D rb { get => _rb; }
     public Animator anim { get => _anim; }
