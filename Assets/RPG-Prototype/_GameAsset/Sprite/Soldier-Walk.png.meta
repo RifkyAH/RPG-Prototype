@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d54a54429c50ef6468ceda6183d8ff32
+guid: 841153538a76dff44a8e496c8c3f0f84
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mage Run sprite sheet_0
+      name: Soldier-Walk_0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 7
-        width: 24
-        height: 51
+        x: 41
+        y: 43
+        width: 15
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc85bbc2bcc6d5c4bb953f2ab894d888
-      internalID: 1357996156
+      spriteID: 3ea4c6d6f04bef0469d886f4c42f93ad
+      internalID: -1467615574
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mage Run sprite sheet_1
+      name: Soldier-Walk_1
       rect:
         serializedVersion: 2
-        x: 82
-        y: 7
-        width: 27
-        height: 52
+        x: 141
+        y: 44
+        width: 15
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18679a4ed5e3dfc4fa3fe6088b208582
-      internalID: 1634689419
+      spriteID: ce4f1d0a7c21344418ece3feda6aaa90
+      internalID: 121733963
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mage Run sprite sheet_2
+      name: Soldier-Walk_2
       rect:
         serializedVersion: 2
-        x: 139
-        y: 5
-        width: 33
-        height: 52
+        x: 241
+        y: 43
+        width: 15
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 657446a558cd40f4e94bbcb70c407ad2
-      internalID: -888032179
+      spriteID: 6ab14f851af846a489be9a5cb83da97f
+      internalID: 2119590100
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mage Run sprite sheet_3
+      name: Soldier-Walk_3
       rect:
         serializedVersion: 2
-        x: 201
-        y: 6
-        width: 37
-        height: 50
+        x: 341
+        y: 43
+        width: 15
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4759ee3c0f64a9241a3c03af0508289d
-      internalID: 643871153
+      spriteID: 10e9fb55774c89042ab35568251754b1
+      internalID: -1790753662
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mage Run sprite sheet_4
+      name: Soldier-Walk_4
       rect:
         serializedVersion: 2
-        x: 267
-        y: 5
-        width: 33
-        height: 52
+        x: 441
+        y: 43
+        width: 15
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0ce29f7988e6884f87952c7621e6a12
-      internalID: 362479339
+      spriteID: e5be9360255a5d5408307207e5ead062
+      internalID: 1592797546
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mage Run sprite sheet_5
+      name: Soldier-Walk_5
       rect:
         serializedVersion: 2
-        x: 329
-        y: 6
-        width: 37
-        height: 50
+        x: 541
+        y: 44
+        width: 15
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea539294bbe5f974abe08963580785b2
-      internalID: -411959278
+      spriteID: 43902618f6e377c428f56b5ec31626a5
+      internalID: 542606421
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mage Run sprite sheet_6
+      name: Soldier-Walk_6
       rect:
         serializedVersion: 2
-        x: 395
-        y: 5
-        width: 33
-        height: 52
+        x: 641
+        y: 43
+        width: 15
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbf82761f1e3bd0428b1ce5c948c4e86
-      internalID: 1822594099
+      spriteID: fe29319bd225c1040b6314be36d19a70
+      internalID: 1945353901
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mage Run sprite sheet_7
+      name: Soldier-Walk_7
       rect:
         serializedVersion: 2
-        x: 457
-        y: 6
-        width: 37
-        height: 50
+        x: 741
+        y: 43
+        width: 15
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,155 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a472424668ad654ba3cfefe4518e0fe
-      internalID: -742324072
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mage Run sprite sheet_8
-      rect:
-        serializedVersion: 2
-        x: 523
-        y: 5
-        width: 33
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bcda2052178f2bf4b87cf253f8de6cd2
-      internalID: -1168043450
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mage Run sprite sheet_9
-      rect:
-        serializedVersion: 2
-        x: 585
-        y: 6
-        width: 37
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 97a63bece3987424cb0914478caeec02
-      internalID: 255336143
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mage Run sprite sheet_10
-      rect:
-        serializedVersion: 2
-        x: 651
-        y: 5
-        width: 33
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3adf94623d051084a99a143560bc2637
-      internalID: 894689536
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mage Run sprite sheet_11
-      rect:
-        serializedVersion: 2
-        x: 713
-        y: 6
-        width: 37
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 77c5ab0a5f03ecc4888fb7ace452c353
-      internalID: -1663450792
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mage Run sprite sheet_12
-      rect:
-        serializedVersion: 2
-        x: 779
-        y: 5
-        width: 33
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2c80ac1c6c8ed024fa9ee9956e43a059
-      internalID: 1923088513
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mage Run sprite sheet_13
-      rect:
-        serializedVersion: 2
-        x: 841
-        y: 6
-        width: 37
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 68a304975d3702c488f12db1090e39e8
-      internalID: 907747963
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mage Run sprite sheet_14
-      rect:
-        serializedVersion: 2
-        x: 914
-        y: 7
-        width: 27
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4e3ee97c970874d46be61dd034dbac59
-      internalID: -330769424
+      spriteID: 509c18b958a35d049be0c2c206023a04
+      internalID: -909802871
       vertices: []
       indices: 
       edges: []
@@ -448,21 +301,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      mage Run sprite sheet_0: 1357996156
-      mage Run sprite sheet_1: 1634689419
-      mage Run sprite sheet_10: 894689536
-      mage Run sprite sheet_11: -1663450792
-      mage Run sprite sheet_12: 1923088513
-      mage Run sprite sheet_13: 907747963
-      mage Run sprite sheet_14: -330769424
-      mage Run sprite sheet_2: -888032179
-      mage Run sprite sheet_3: 643871153
-      mage Run sprite sheet_4: 362479339
-      mage Run sprite sheet_5: -411959278
-      mage Run sprite sheet_6: 1822594099
-      mage Run sprite sheet_7: -742324072
-      mage Run sprite sheet_8: -1168043450
-      mage Run sprite sheet_9: 255336143
+      Soldier-Walk_0: -1467615574
+      Soldier-Walk_1: 121733963
+      Soldier-Walk_2: 2119590100
+      Soldier-Walk_3: -1790753662
+      Soldier-Walk_4: 1592797546
+      Soldier-Walk_5: 542606421
+      Soldier-Walk_6: 1945353901
+      Soldier-Walk_7: -909802871
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
