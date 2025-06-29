@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyManager : MonoBehaviour
+public class EnemyManager : MonoBehaviour, IDamageable
 {
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -11,5 +11,9 @@ public class EnemyManager : MonoBehaviour
         {
             taged.TakeDamage(20);
         }
+    }
+    public void TakeDamage(float amount)
+    {
+        Debug.Log("Musuh terkena Damage" + amount);
     }
 }

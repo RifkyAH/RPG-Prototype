@@ -9,6 +9,7 @@ public class PlayerStateManager : MonoBehaviour,IDamageable
     [SerializeField] private Rigidbody2D _rb;
     [SerializeField] private Animator _anim;
     [SerializeField] private Transform _playerBody;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +46,7 @@ public class PlayerStateManager : MonoBehaviour,IDamageable
         _controller.GetStats.HealthPoint -= amount;
         _controller.GetStats._healthChange.OnNext(_controller.GetStats.HealthPoint);
     }
+
     public Rigidbody2D rb { get => _rb; }
     public Animator anim { get => _anim; }
     public Transform playerBody { get => _playerBody;}

@@ -10,6 +10,8 @@ public class PlayerControlBinder : MonoBehaviour
 {
     private Subject<float> _horizontalMovement;
     private UnityEvent _Jump;
+    private UnityEvent _AttackStart;
+    private UnityEvent _AttackEnd;
     public IObservable<float> OnHorizontalMovementAsObservable()
     {
         return _horizontalMovement.AsObservable();
@@ -18,10 +20,20 @@ public class PlayerControlBinder : MonoBehaviour
     {
         return _Jump.AsObservable();
     }
+    public IObservable<Unit> OnAttackStartAsObservable()
+    {
+        return _AttackStart.AsObservable();
+    }
+    public IObservable<Unit> OnAttackEndAsObservable()
+    {
+        return _AttackEnd.AsObservable();
+    }
     private void Awake()
     {
         _horizontalMovement = new Subject<float>();
         _Jump = new UnityEvent();
+        _AttackStart = new UnityEvent();
+        _AttackEnd = new UnityEvent();
     }
     private void OnMove(InputValue value)
     {
@@ -31,5 +43,16 @@ public class PlayerControlBinder : MonoBehaviour
     private void OnJump(InputValue value)
     {
         _Jump?.Invoke();
+    }
+    private void OnAttack(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            _AttackStart?.Invoke();
+        }
+        else
+        {
+            _AttackEnd?.Invoke();
+        }
     }
 }

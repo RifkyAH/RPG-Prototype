@@ -38,5 +38,9 @@ public class PlayerMovementState : PlayerBaseState
         {
             player.SwitchState(player.JumpState);
         }
+        if (player.GetModel.AttackPressed)
+        {
+            player.SwitchState(player.AttackState);
+        }
     }
 }

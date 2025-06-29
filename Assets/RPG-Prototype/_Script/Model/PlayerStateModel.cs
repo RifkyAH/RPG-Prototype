@@ -10,6 +10,7 @@ public class PlayerStateData
     public bool JumpPressed { get; set; }
     public bool OnGround { get; set; }
     public bool IsFacingRight { get; set; }
+    public bool AttackPressed { get; set; }
 }
 public class PlayerStateModel : IInitializable
 {
@@ -44,11 +45,17 @@ public class PlayerStateModel : IInitializable
         get => _playerData.IsFacingRight;
         set => _playerData.IsFacingRight = value;
     }
+    public bool AttackPressed
+    {
+        get => _playerData.AttackPressed;
+        set => _playerData.AttackPressed = value;
+    }
     private void InitialData()
     {
         MovementSpeed = 5f;
         JumpPressed = false;
         OnGround = false;
         IsFacingRight = true;
+        AttackPressed = false;
     }
 }
