@@ -51,6 +51,12 @@ public class PlayerAttackHandler : MonoBehaviour
     public void SpawnArrow()
     {
         GameObject arrow = arrowPool.Get();
+        arrow.transform.position = _spawnerArrow.position;
+        arrow.transform.rotation = Quaternion.identity;
+
+        Projectile projectile = arrow.GetComponent<Projectile>();
+        projectile.Init(this);
+        
         Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
         float direction = Mathf.Sign(transform.localScale.x);
         rb.velocity = Vector2.zero;

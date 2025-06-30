@@ -18,7 +18,8 @@ public class Projectile : MonoBehaviour
     }
     void Update()
     {
-        if (m_StartTime + m_LifeTime < Time.time) {
+        if (m_StartTime + m_LifeTime < Time.time)
+        {
             DestroyProjectile();
         }
     }
@@ -35,4 +36,9 @@ public class Projectile : MonoBehaviour
         }
         DestroyProjectile();
     }
+    public void Init(PlayerAttackHandler handler)
+    {
+        _handler = handler;
+    }
+
 }
