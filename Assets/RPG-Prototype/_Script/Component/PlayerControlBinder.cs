@@ -10,8 +10,8 @@ public class PlayerControlBinder : MonoBehaviour
 {
     private Subject<float> _horizontalMovement;
     private UnityEvent _Jump;
-    private UnityEvent _AttackStart;
-    private UnityEvent _AttackEnd;
+    private UnityEvent _MeleeAttack;
+    private UnityEvent _BowAttack;
     public IObservable<float> OnHorizontalMovementAsObservable()
     {
         return _horizontalMovement.AsObservable();
@@ -20,20 +20,20 @@ public class PlayerControlBinder : MonoBehaviour
     {
         return _Jump.AsObservable();
     }
-    public IObservable<Unit> OnAttackStartAsObservable()
+    public IObservable<Unit> OnMeleeAttackAsObservable()
     {
-        return _AttackStart.AsObservable();
+        return _MeleeAttack.AsObservable();
     }
-    public IObservable<Unit> OnAttackEndAsObservable()
+    public IObservable<Unit> OnBowAttackAsObservable()
     {
-        return _AttackEnd.AsObservable();
+        return _BowAttack.AsObservable();
     }
     private void Awake()
     {
         _horizontalMovement = new Subject<float>();
         _Jump = new UnityEvent();
-        _AttackStart = new UnityEvent();
-        _AttackEnd = new UnityEvent();
+        _MeleeAttack = new UnityEvent();
+        _BowAttack = new UnityEvent();
     }
     private void OnMove(InputValue value)
     {
@@ -44,15 +44,12 @@ public class PlayerControlBinder : MonoBehaviour
     {
         _Jump?.Invoke();
     }
-    private void OnAttack(InputValue value)
+    private void OnMeleeAttack(InputValue value)
     {
-        if (value.isPressed)
-        {
-            _AttackStart?.Invoke();
-        }
-        else
-        {
-            _AttackEnd?.Invoke();
-        }
+        _MeleeAttack?.Invoke();
+    }
+    private void OnBowAttack(InputValue value)
+    {
+        _BowAttack?.Invoke();
     }
 }

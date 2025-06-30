@@ -24,9 +24,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Attack",
+                    "name": "MeleeAttack",
                     "type": "Button",
                     "id": "0fe919c7-1837-435c-98e8-5ff552d2d3a2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BowAttack",
+                    "type": "Button",
+                    "id": "de994ac2-9131-4ea5-ad19-9277cfa59472",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -115,10 +124,21 @@
                     "name": "",
                     "id": "031fcd85-e238-4e35-9bee-4fb1c6f93f36",
                     "path": "<Keyboard>/d",
-                    "interactions": "Press(behavior=2)",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
-                    "action": "Attack",
+                    "action": "MeleeAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "72497c15-9d88-4c3e-948f-0d94fb50b2e9",
+                    "path": "<Keyboard>/s",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BowAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

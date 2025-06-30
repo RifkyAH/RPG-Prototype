@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttackState : PlayerBaseState
+public class PlayerBowState : PlayerBaseState
 {
     public override void EnterState(PlayerStateController player)
     {
-        player.GetPlayer.anim.SetBool("isAttack", true);
+        player.GetPlayer.anim.SetBool("bowAttack", true);
     }
     public override void FixedUpdateState(PlayerStateController player)
     {
@@ -18,10 +18,10 @@ public class PlayerAttackState : PlayerBaseState
     }
     public override void UpdateState(PlayerStateController player)
     {
-        if (!player.GetModel.AttackPressed)
+        if (!player.GetModel.BowAttackPressed)
         {
-            player.GetPlayer.anim.SetBool("isAttack",false);
-            player.SwitchState(player.LastState);       
+            player.GetPlayer.anim.SetBool("bowAttack",false);
+            player.SwitchState(player.IdleState);       
         }
     }
 }

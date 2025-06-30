@@ -25,9 +25,13 @@ public class PlayerIdleState : PlayerBaseState
         {
             player.SwitchState(player.JumpState);
         }
-        if (player.GetModel.AttackPressed)
+        if (player.GetModel.MeleeAttackPressed)
         {
             player.SwitchState(player.AttackState);
+        }
+        if (player.GetModel.BowAttackPressed)
+        {
+            player.SwitchState(player.BowState);
         }
     }
 }

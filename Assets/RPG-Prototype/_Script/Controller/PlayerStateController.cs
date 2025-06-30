@@ -16,7 +16,8 @@ public class PlayerStateController : IInitializable, IDisposable
     public PlayerIdleState IdleState = new PlayerIdleState();
     public PlayerMovementState MovementState = new PlayerMovementState();
     public PlayerJumpState JumpState = new PlayerJumpState();
-    public PlayerAttackState AttackState = new PlayerAttackState();
+    public PlayerMeleeState AttackState = new PlayerMeleeState();
+    public PlayerBowState BowState = new PlayerBowState();
     public PlayerBaseState CurrentState;
     public PlayerBaseState LastState;
     private CompositeDisposable _disposables;
@@ -29,8 +30,8 @@ public class PlayerStateController : IInitializable, IDisposable
         _disposables = new CompositeDisposable();
         _input.OnHorizontalMovementAsObservable().Subscribe(_ => HorizontalMovement(_)).AddTo(_disposables);
         _input.OnJumpAsObservable().Subscribe(_ => Jump()).AddTo(_disposables);
-        _input.OnAttackStartAsObservable().Subscribe(_ => AttackStart()).AddTo(_disposables);
-        _input.OnAttackEndAsObservable().Subscribe(_ => AttackEnd()).AddTo(_disposables);
+        _input.OnMeleeAttackAsObservable().Subscribe(_ => MeleeAttack()).AddTo(_disposables);
+        _input.OnBowAttackAsObservable().Subscribe(_ => BowAttack()).AddTo(_disposables);
 
         _stats.OnHealtChangeAsObservable().Subscribe(_ => healthChange(_)).AddTo(_disposables);
         SwitchState(IdleState);
@@ -44,13 +45,13 @@ public class PlayerStateController : IInitializable, IDisposable
     {
         _model.JumpPressed = true;
     }
-    private void AttackStart()
+    private void MeleeAttack()
     {
-        _model.AttackPressed = true;
+        _model.MeleeAttackPressed = true;
     }
-    private void AttackEnd()
+    private void BowAttack()
     {
-        _model.AttackPressed = false;
+        _model.BowAttackPressed = true;
     }
     private void healthChange(float HealthPoint)
     {
