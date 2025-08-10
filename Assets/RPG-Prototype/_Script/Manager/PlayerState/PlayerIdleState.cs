@@ -13,7 +13,7 @@ public class PlayerIdleState : PlayerBaseState
     }
     public override void OnCollisionEnter2D(PlayerStateController player, Collision2D collision)
     {
-        
+
     }
     public override void UpdateState(PlayerStateController player)
     {
@@ -32,6 +32,10 @@ public class PlayerIdleState : PlayerBaseState
         if (player.GetModel.BowAttackPressed)
         {
             player.SwitchState(player.BowState);
+        }
+        if (player.GetModel.CurrentGameState == GameStateManager.GameState.Inventory || player.GetModel.CurrentGameState == GameStateManager.GameState.Pause )
+        {
+            player.SwitchState(player.PauseState);
         }
     }
 }

@@ -6,4 +6,6 @@ using UnityEngine;
 public class PlayerView : MonoBehaviour
 {
     public TextMeshProUGUI HealthUI;
+    public GameObject InventoryUI;
+    // public GameObject PauseUI;
 }
