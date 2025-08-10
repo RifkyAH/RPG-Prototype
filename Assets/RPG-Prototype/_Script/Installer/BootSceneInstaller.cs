@@ -8,5 +8,6 @@ public class BootSceneInstaller : MonoInstaller
         Container.BindInterfacesAndSelfTo<LaunchSceneController>().AsSingle();
         Container.Bind<FadeOverlay>().FromComponentInHierarchy().AsSingle();
         Container.Bind<PlayerControlBinder>().FromComponentInHierarchy().AsSingle();
+        Container.Bind<GameControlBinder>().FromComponentInHierarchy().AsSingle();
     }
 }

@@ -12,12 +12,14 @@ public class PlayerStateController : IInitializable, IDisposable
     [Inject] PlayerStateModel _model;
     [Inject] PlayerStatsModel _stats;
     [Inject] PlayerView _view;
+    [Inject] GameStateManager _gameState;
 
     public PlayerIdleState IdleState = new PlayerIdleState();
     public PlayerMovementState MovementState = new PlayerMovementState();
     public PlayerJumpState JumpState = new PlayerJumpState();
     public PlayerMeleeState AttackState = new PlayerMeleeState();
     public PlayerBowState BowState = new PlayerBowState();
+    public PlayerPauseState PauseState = new PlayerPauseState();
     public PlayerBaseState CurrentState;
     public PlayerBaseState LastState;
     private CompositeDisposable _disposables;
@@ -34,6 +36,7 @@ public class PlayerStateController : IInitializable, IDisposable
         _input.OnBowAttackAsObservable().Subscribe(_ => BowAttack()).AddTo(_disposables);
 
         _stats.OnHealtChangeAsObservable().Subscribe(_ => healthChange(_)).AddTo(_disposables);
+        _gameState.currentState.Skip(1).Subscribe(state => GameState(state)).AddTo(_disposables);
         SwitchState(IdleState);
         CurrentState = IdleState;
     }
@@ -57,6 +60,10 @@ public class PlayerStateController : IInitializable, IDisposable
     {
         _view.HealthUI.text = "Health : " + HealthPoint;
     }
+    private void GameState(GameStateManager.GameState state)
+    {
+        _model.CurrentGameState = state;
+    }
     public void SwitchState(PlayerBaseState state)
     {
         if (CurrentState != state)
@@ -69,5 +76,7 @@ public class PlayerStateController : IInitializable, IDisposable
     }
     public PlayerStateManager GetPlayer { get => _player; }
     public PlayerStateModel GetModel { get => _model; }
+    public PlayerView GetView { get => _view; }
     public PlayerStatsModel GetStats { get => _stats; }
+    public GameStateManager GetGameManager { get => _gameState; }
 }

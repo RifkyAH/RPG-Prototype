@@ -5,6 +5,7 @@ public class MainSceneInstaller : MonoInstaller
 {
     public override void InstallBindings()
     {
+        Container.Bind<GameStateManager>().FromComponentInHierarchy().AsSingle();
         Container.BindInterfacesAndSelfTo<PlayerStateController>().AsSingle();
         Container.BindInterfacesAndSelfTo<PlayerStateModel>().AsSingle();
         Container.BindInterfacesAndSelfTo<PlayerStatsModel>().AsSingle();

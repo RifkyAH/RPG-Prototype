@@ -12,6 +12,7 @@ public class PlayerStateData
     public bool IsFacingRight { get; set; }
     public bool MeleeAttackPressed { get; set; }
     public bool BowAttackPressed { get; set; }
+    public GameStateManager.GameState CurrentGameState { get; set; }
 }
 public class PlayerStateModel : IInitializable
 {
@@ -55,6 +56,11 @@ public class PlayerStateModel : IInitializable
     {
         get => _playerData.BowAttackPressed;
         set => _playerData.BowAttackPressed = value;
+    }
+    public GameStateManager.GameState CurrentGameState
+    {
+        get => _playerData.CurrentGameState;
+        set => _playerData.CurrentGameState = value;
     }
     private void InitialData()
     {
