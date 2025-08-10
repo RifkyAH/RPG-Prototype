@@ -7,6 +7,8 @@ public class MainSceneInstaller : MonoInstaller
     {
         Container.BindInterfacesAndSelfTo<PlayerStateController>().AsSingle();
         Container.BindInterfacesAndSelfTo<PlayerStateModel>().AsSingle();
+        Container.BindInterfacesAndSelfTo<PlayerStatsModel>().AsSingle();
+        Container.Bind<PlayerView>().FromComponentInHierarchy().AsSingle();
         Container.Bind<PlayerStateManager>().FromComponentInHierarchy().AsSingle();
     }
 }
