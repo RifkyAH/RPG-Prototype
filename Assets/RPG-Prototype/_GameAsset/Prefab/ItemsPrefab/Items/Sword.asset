@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Sword
   m_EditorClassIdentifier: 
   ItemId: 0
-  ItemName: 
+  ItemName: Sword
   ItemIcon: {fileID: 0}
   ItemDescription: 
   ItemType: 0
   isStackable: 0
-  ItemDropPrefab: {fileID: 0}
+  ItemDropPrefab: {fileID: 7415354774720909638, guid: b9cda1ceaa825254eb933335242b3758, type: 3}
