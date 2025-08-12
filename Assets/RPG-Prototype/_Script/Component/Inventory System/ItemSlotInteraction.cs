@@ -1,0 +1,37 @@
+using System.Collections;
+using System.Collections.Generic;
+using UniRx;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
+using Zenject;
+
+public class ItemSlotInteraction : MonoBehaviour
+{
+    [SerializeField] private Camera camera;
+    [Inject] private GameControlBinder Input;
+    void Awake()
+    {
+        camera = FindAnyObjectByType<Camera>();
+        Input.OnInteractionOpenAsObservable().Subscribe(_ => Interaction()).AddTo(this);
+    }
+    void Interaction()
+    {
+        PointerEventData pointerData = new PointerEventData(EventSystem.current)
+        {
+            position = Mouse.current.position.ReadValue()
+        };
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointerData, results);
+
+        foreach (var hit in results)
+        {
+            ItemSlot slot = hit.gameObject.GetComponent<ItemSlot>();
+            if (slot != null)
+            {
+                slot.SelectSlot();
+                break;
+            }
+        }
+    }
+}

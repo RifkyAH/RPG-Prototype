@@ -6,7 +6,7 @@ public class Inventory : MonoBehaviour
 {
     public List<Item> ItemCollection = new List<Item>();
     public ItemSlot[] itemSlot;
-    // Start is called before the first frame update
+
     void Start()
     {
 
@@ -24,5 +24,12 @@ public class Inventory : MonoBehaviour
             }
         }
     }
-
+    public void DeselectAllSlots()
+    {
+        for (int i = 0; i < itemSlot.Length; i++)
+        {
+            itemSlot[i].selectedShader.SetActive(false);
+            itemSlot[i].isSelected = false;
+        }
+    }
 }

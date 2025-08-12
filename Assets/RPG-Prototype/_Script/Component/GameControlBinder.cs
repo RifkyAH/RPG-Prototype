@@ -9,16 +9,26 @@ using UnityEngine.InputSystem;
 public class GameControlBinder : MonoBehaviour
 {
     private UnityEvent _Inventory;
+    private UnityEvent _Interaction;
     public IObservable<Unit> OnInventoryOpenAsObservable()
     {
         return _Inventory.AsObservable();
     }
+    public IObservable<Unit> OnInteractionOpenAsObservable()
+    {
+        return _Interaction.AsObservable();
+    }
     void Awake()
     {
         _Inventory = new UnityEvent();
+        _Interaction = new UnityEvent();
     }
     private void OnInventory(InputValue value)
     {
         _Inventory?.Invoke();
+    }
+    private void OnInteract(InputValue value)
+    {
+        _Interaction?.Invoke();
     }
 }
