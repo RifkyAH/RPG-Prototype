@@ -8,11 +8,11 @@ using Zenject;
 
 public class ItemSlotInteraction : MonoBehaviour
 {
-    [SerializeField] private Camera camera;
+    // [SerializeField] private Camera mainCamera;
     [Inject] private GameControlBinder Input;
     void Awake()
     {
-        camera = FindAnyObjectByType<Camera>();
+        // mainCamera = FindAnyObjectByType<Camera>();
         Input.OnInteractionOpenAsObservable().Subscribe(_ => Interaction()).AddTo(this);
     }
     void Interaction()
