@@ -11,8 +11,8 @@ public class ItemsPickup : MonoBehaviour
     void Awake()
     {
         // Mengambil Sprite dari ScriptableObject
-        // m_Sprite = GetComponent<Sprite>();
-        // m_Sprite.sprite = m_Item.ItemIcon;
+        m_Sprite = GetComponent<SpriteRenderer>();
+        m_Sprite.sprite = m_Item.ItemIcon;
     }
     void OnTriggerEnter2D(Collider2D other)
     {
