@@ -158,7 +158,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Interact",
+                    "name": "InventoryNav",
                     "type": "Button",
                     "id": "3e81f2cd-3618-49bb-8be8-56c4ff4d015a",
                     "expectedControlType": "Button",
@@ -183,10 +183,10 @@
                     "name": "",
                     "id": "9253dbab-7e7a-49e5-a1e7-305b38fd323d",
                     "path": "<Mouse>/leftButton",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "",
-                    "action": "Interact",
+                    "action": "InventoryNav",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

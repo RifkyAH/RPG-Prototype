@@ -17,9 +17,18 @@ public class Inventory : MonoBehaviour
         ItemCollection.Add(item);
         for (int i = 0; i < itemSlot.Length; i++)
         {
-            if (itemSlot[i].isFull == false)
+            // Stacking item    
+            if (item.isStackable)
             {
-                itemSlot[i].ShowItem(item);
+                if (itemSlot[i].hasItem && item.ItemName == itemSlot[i].itemName && itemSlot[i].itemQuantity <= item.MaxItem)
+                {
+                    itemSlot[i].ShowItem(item, item.ItemQuantity);
+                    return;
+                }
+            }
+            if (!itemSlot[i].hasItem)
+            {
+                itemSlot[i].ShowItem(item, item.ItemQuantity);
                 return;
             }
         }

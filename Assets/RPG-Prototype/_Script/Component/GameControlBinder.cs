@@ -9,26 +9,26 @@ using UnityEngine.InputSystem;
 public class GameControlBinder : MonoBehaviour
 {
     private UnityEvent _Inventory;
-    private UnityEvent _Interaction;
+    private UnityEvent _InventoryNav;
     public IObservable<Unit> OnInventoryOpenAsObservable()
     {
         return _Inventory.AsObservable();
     }
-    public IObservable<Unit> OnInteractionOpenAsObservable()
+    public IObservable<Unit> OnInventoryNavAsObservable()
     {
-        return _Interaction.AsObservable();
+        return _InventoryNav.AsObservable();
     }
     void Awake()
     {
         _Inventory = new UnityEvent();
-        _Interaction = new UnityEvent();
+        _InventoryNav = new UnityEvent();
     }
     private void OnInventory(InputValue value)
     {
         _Inventory?.Invoke();
     }
-    private void OnInteract(InputValue value)
+    private void OnInventoryNav(InputValue value)
     {
-        _Interaction?.Invoke();
+        _InventoryNav?.Invoke();
     }
 }

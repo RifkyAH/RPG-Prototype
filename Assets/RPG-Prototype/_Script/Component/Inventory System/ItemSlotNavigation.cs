@@ -6,16 +6,16 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using Zenject;
 
-public class ItemSlotInteraction : MonoBehaviour
+public class ItemSlotNavigation : MonoBehaviour
 {
-    // [SerializeField] private Camera mainCamera;
+    [SerializeField] private Camera mainCamera;
     [Inject] private GameControlBinder Input;
     void Awake()
     {
-        // mainCamera = FindAnyObjectByType<Camera>();
-        Input.OnInteractionOpenAsObservable().Subscribe(_ => Interaction()).AddTo(this);
+        mainCamera = FindAnyObjectByType<Camera>();
+        Input.OnInventoryNavAsObservable().Subscribe(_ => InventoryNav()).AddTo(this);
     }
-    void Interaction()
+    void InventoryNav()
     {
         PointerEventData pointerData = new PointerEventData(EventSystem.current)
         {
