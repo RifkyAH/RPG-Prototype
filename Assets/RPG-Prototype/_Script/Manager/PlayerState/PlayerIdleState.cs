@@ -6,6 +6,7 @@ public class PlayerIdleState : PlayerBaseState
 {
     public override void EnterState(PlayerStateController player)
     {
+        player.GetPlayer.rb.velocity = new Vector2(0,player.GetPlayer.rb.velocity.y);
     }
     public override void FixedUpdateState(PlayerStateController player)
     {

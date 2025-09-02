@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemId: 0
   MaxItem: 99
-  ItemQuantity: 99
+  ItemQuantity: 1
   ItemName: Potion
   ItemIcon: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
   ItemDescription: Bisa Diminum Cuyyyy
   ItemType: 3
-  isStackable: 0
+  isStackable: 1
   itemEffect: {fileID: 11400000, guid: 1294de18f3b706c4aa94e5f6c965ec60, type: 2}
   ItemDropPrefab: {fileID: 7415354774720909638, guid: b9cda1ceaa825254eb933335242b3758, type: 3}

@@ -24,15 +24,15 @@ public class Inventory : MonoBehaviour
             // Stacking item    
             if (item.isStackable)
             {
-                if (itemSlot[i].hasItem && item.ItemName == itemSlot[i].DataItem.ItemName && itemSlot[i].DataItem.ItemQuantity <= item.MaxItem)
+                if (itemSlot[i].hasItem && item.ItemName == itemSlot[i].DataItem.ItemName && itemSlot[i].DataItem.ItemQuantity < item.MaxItem)
                 {
-                    itemSlot[i].ShowItem(item, item.ItemQuantity);
+                    itemSlot[i].ShowItem(item);
                     return;
                 }
             }
             if (!itemSlot[i].hasItem)
             {
-                itemSlot[i].ShowItem(item, item.ItemQuantity);
+                itemSlot[i].ShowItem(item);
                 return;
             }
         }
@@ -82,7 +82,7 @@ public class Inventory : MonoBehaviour
         DeleteItem();
         HideActionUI();
     }
-    public void Cancle()
+    public void Cancel()
     {
         DeselectAllSlots();
         HideActionUI();

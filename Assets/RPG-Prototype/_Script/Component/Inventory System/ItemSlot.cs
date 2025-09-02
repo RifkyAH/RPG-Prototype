@@ -26,7 +26,7 @@ public class ItemSlot : MonoBehaviour
     {
         inventory = FindAnyObjectByType<Inventory>();
     }
-    public void ShowItem(Item item, int quantity)
+    public void ShowItem(Item item)
     {
         DataItem = item;
         if (DataItem.isStackable)
@@ -57,8 +57,8 @@ public class ItemSlot : MonoBehaviour
         if (DataItem.ItemType == ItemType.Consumable)
         {
             DataItem.itemEffect.ApplyEffect(statsModel);
+            inventory.DeleteItem();
         }
-        inventory.DeleteItem();
     }
  
     public void EmptySlot()

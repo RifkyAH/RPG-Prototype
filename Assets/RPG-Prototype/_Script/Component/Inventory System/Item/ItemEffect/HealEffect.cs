@@ -10,7 +10,7 @@ public class HealEffect : ItemEffect
     [Inject] private PlayerStatsModel statsModel;
     public override void ApplyEffect(PlayerStatsModel statsModel)
     {
-        if (statsModel.HealthPoint <= statsModel.MaxHealthPoint)
+        if (statsModel.HealthPoint < statsModel.MaxHealthPoint)
         {
             statsModel._healthChange.OnNext(statsModel.HealthPoint += healAmount);
         }

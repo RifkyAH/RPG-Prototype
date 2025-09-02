@@ -20,4 +20,5 @@ MonoBehaviour:
   ItemDescription: INI PEDANG ANJAYYYYYYYYY
   ItemType: 0
   isStackable: 0
+  itemEffect: {fileID: 0}
   ItemDropPrefab: {fileID: 7415354774720909638, guid: b9cda1ceaa825254eb933335242b3758, type: 3}
