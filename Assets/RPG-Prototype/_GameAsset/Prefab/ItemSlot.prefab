@@ -376,11 +376,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6cd7ff17bc72546bbc366c900dcef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
-  itemDescription: 
-  itemQuantity: 0
+  DataItem: {fileID: 0}
   hasItem: 0
   selectedShader: {fileID: 4295981662724562730}
+  itemActionPanel: {fileID: 0}
   isSelected: 0
   itemImage: {fileID: 1562581925106446737}
   itemDescImage: {fileID: 0}

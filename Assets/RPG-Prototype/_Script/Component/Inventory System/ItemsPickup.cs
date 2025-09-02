@@ -12,7 +12,10 @@ public class ItemsPickup : MonoBehaviour
     {
         // Mengambil Sprite dari ScriptableObject
         m_Sprite = GetComponent<SpriteRenderer>();
-        m_Sprite.sprite = m_Item.ItemIcon;
+        if (m_Item != null)
+        {
+            m_Sprite.sprite = m_Item.ItemIcon; 
+        }
     }
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -27,4 +30,10 @@ public class ItemsPickup : MonoBehaviour
         inventory.AddItem(m_Item);
         Destroy(gameObject);
     }
+    public void SetItem(Item item)
+    {
+        m_Item = item;
+        m_Sprite.sprite = item.ItemIcon;
+    }
+    public Item GetItem { get => m_Item; }
 }

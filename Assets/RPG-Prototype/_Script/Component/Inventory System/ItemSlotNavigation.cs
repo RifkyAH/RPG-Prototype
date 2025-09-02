@@ -29,6 +29,10 @@ public class ItemSlotNavigation : MonoBehaviour
             ItemSlot slot = hit.gameObject.GetComponent<ItemSlot>();
             if (slot != null)
             {
+                if (slot.DataItem == null)
+                {
+                    return;
+                }
                 slot.SelectSlot();
                 break;
             }

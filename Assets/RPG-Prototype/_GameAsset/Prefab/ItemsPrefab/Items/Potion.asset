@@ -20,4 +20,5 @@ MonoBehaviour:
   ItemDescription: Bisa Diminum Cuyyyy
   ItemType: 3
   isStackable: 0
+  itemEffect: {fileID: 11400000, guid: 1294de18f3b706c4aa94e5f6c965ec60, type: 2}
   ItemDropPrefab: {fileID: 7415354774720909638, guid: b9cda1ceaa825254eb933335242b3758, type: 3}

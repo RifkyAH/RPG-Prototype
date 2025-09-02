@@ -9,13 +9,11 @@ using UnityEngine.UI;
 public class ItemSlot : MonoBehaviour
 {
     // Item Data
-    public string itemName,itemDescription;
+    public Item DataItem;
     public int itemQuantity;
-    private Sprite itemIcon;
     public bool hasItem;
     // Slot Item
-    // private TMP_Text quantityText;
-    public GameObject selectedShader;
+    public GameObject selectedShader, itemActionPanel;
     public bool isSelected = false;
     Inventory inventory;
     [SerializeField] private Image itemImage;
@@ -23,32 +21,54 @@ public class ItemSlot : MonoBehaviour
     [SerializeField] private Image itemDescImage;
     [SerializeField] private TMP_Text itemDescName;
     [SerializeField] private TMP_Text itemDescText;
-    [SerializeField] private TMP_Text itemQuantityText;
+    [SerializeField] public TMP_Text itemQuantityText;
     void Start()
     {
         inventory = FindAnyObjectByType<Inventory>();
     }
-    public void ShowItem(Item item,int quantity)
+    public void ShowItem(Item item, int quantity)
     {
-        itemName = item.ItemName;
-        itemIcon = item.ItemIcon;
-        itemQuantity += quantity;
-        itemQuantityText.text = itemQuantity.ToString();
-        itemDescription = item.ItemDescription;
+        DataItem = item;
+        if (DataItem.isStackable)
+        {
+            itemQuantity += DataItem.ItemQuantity;
+            itemQuantityText.text = itemQuantity.ToString();
+        }
         hasItem = true;
-        itemImage.sprite = itemIcon;
+        itemImage.sprite = DataItem.ItemIcon;
     }
     public void ShowDescItem()
     {
-        itemDescName.text = itemName;
-        itemDescText.text = itemDescription;
-        itemDescImage.sprite = itemIcon;
+        itemDescName.text = DataItem.ItemName;
+        itemDescText.text = DataItem.ItemDescription;
+        itemDescImage.sprite = DataItem.ItemIcon;
     }
     public void SelectSlot()
     {
         inventory.DeselectAllSlots();
         ShowDescItem();
         selectedShader.SetActive(true);
+        itemActionPanel.SetActive(true);
         isSelected = true;
+        inventory.currentItemSlot = this;
+    }
+    public void UseItem(PlayerStatsModel statsModel)
+    {
+        if (DataItem.ItemType == ItemType.Consumable)
+        {
+            DataItem.itemEffect.ApplyEffect(statsModel);
+        }
+        inventory.DeleteItem();
+    }
+ 
+    public void EmptySlot()
+    {
+        itemImage.sprite = null;
+        itemDescName.text = "";
+        itemDescText.text = "";
+        itemDescImage.sprite = null;
+        hasItem = false;
+        DataItem = null;
+        itemQuantityText.text = "";
     }
 }

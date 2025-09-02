@@ -27,7 +27,7 @@ public class GameControlBinder : MonoBehaviour
     {
         _Inventory?.Invoke();
     }
-    private void OnInventoryNav(InputValue value)
+    private void OnClick(InputValue value)
     {
         _InventoryNav?.Invoke();
     }

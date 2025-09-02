@@ -158,13 +158,22 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "InventoryNav",
-                    "type": "Button",
+                    "name": "Click",
+                    "type": "PassThrough",
                     "id": "3e81f2cd-3618-49bb-8be8-56c4ff4d015a",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Point",
+                    "type": "PassThrough",
+                    "id": "58e44af7-77d4-4d74-95e8-a323538f6118",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -186,7 +195,18 @@
                     "interactions": "Press",
                     "processors": "",
                     "groups": "",
-                    "action": "InventoryNav",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2926ff53-e595-47e5-a24e-dad86d149cbf",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Point",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
