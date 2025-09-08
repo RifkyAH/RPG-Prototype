@@ -11,10 +11,9 @@ public class PlayerMovementState : PlayerBaseState
     public override void FixedUpdateState(PlayerStateController player)
     {
         float Horizontal = player.GetModel.Horizontal;
+        Debug.Log(Horizontal);
         player.GetPlayer.anim.SetFloat("isRun", Mathf.Abs(Horizontal));
-        Vector2 velocity = player.GetPlayer.rb.velocity;
-        velocity.x = Horizontal * player.GetModel.MovementSpeed;
-        player.GetPlayer.rb.velocity = velocity;
+        player.GetPlayer.rb.velocity = new Vector2(Horizontal*player.GetModel.MovementSpeed,player.GetPlayer.rb.velocity.y);
         if (Horizontal > 0 && !player.GetModel.IsFacingRight)
         {
             player.GetPlayer.Flip();

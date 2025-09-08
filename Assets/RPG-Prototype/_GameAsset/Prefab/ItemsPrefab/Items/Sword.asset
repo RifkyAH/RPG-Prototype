@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb599efb09d3db45a718d60d7e2eaa0, type: 3}
+  m_Name: Sword
+  m_EditorClassIdentifier: 
+  ItemId: 0
+  MaxItem: 99
+  ItemQuantity: 1
+  ItemName: Sword
+  ItemIcon: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  ItemDescription: INI PEDANG ANJAYYYYYYYYY
+  ItemType: 0
+  isStackable: 0
+  itemEffect: {fileID: 0}
+  ItemDropPrefab: {fileID: 7415354774720909638, guid: b9cda1ceaa825254eb933335242b3758, type: 3}

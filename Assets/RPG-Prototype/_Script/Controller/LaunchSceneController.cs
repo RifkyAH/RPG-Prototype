@@ -9,11 +9,24 @@ public class LaunchSceneController : IInitializable
 {
     [Inject]private FadeOverlay _fadeOverlay;
     const string BOOT_SCENE = "BootScene";
+    const string MAIN_MENU_SCENE = "MainMenuScene";
     const string MAIN_SCENE = "MainScene";
     const string Over_World_Scene = "OverWorldScene";
     public void Initialize()
     {
-        MainThreadDispatcher.StartCoroutine(LoadMainScene());
+        MainThreadDispatcher.StartCoroutine(LoadMainMenuScene());
+    }
+    public IEnumerator LoadMainMenuScene()
+    {
+        if (SceneManager.GetSceneByName(MAIN_MENU_SCENE).isLoaded)
+        {
+            SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName(MAIN_MENU_SCENE));
+        }
+        AsyncOperation SceneLoadOperation = SceneManager.LoadSceneAsync(MAIN_MENU_SCENE, LoadSceneMode.Additive);
+        while (!SceneLoadOperation.isDone)
+        {
+            yield return null;
+        }
     }
     public IEnumerator LoadMainScene()
     {

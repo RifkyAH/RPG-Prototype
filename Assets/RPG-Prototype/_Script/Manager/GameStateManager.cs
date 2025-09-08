@@ -42,4 +42,5 @@ public class GameStateManager : MonoBehaviour
             currentState.Value = state;
         }
     }
+    public GameControlBinder GetInput { get => _input; }
 }

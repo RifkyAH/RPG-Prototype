@@ -11,11 +11,12 @@ public enum ItemType
 [CreateAssetMenu(fileName = "Items", menuName = "ScriptableObjects/Items")]
 public class Item : ScriptableObject
 {
-    public int ItemId;
+    public int ItemId, MaxItem, ItemQuantity;
     public string ItemName;
     public Sprite ItemIcon;
     public string ItemDescription;
     public ItemType ItemType;
     public bool isStackable;
+    public ItemEffect itemEffect;
     public GameObject ItemDropPrefab;
 }
